@@ -1,13 +1,15 @@
 #include "phoneme.h"
 
-Phoneme::Phoneme() {
+Phoneme::Phoneme()
+{
   my_phoneme_ = "";
   k_gauss_ = 0;
   my_gmm_ = new GMM;
 }
 
 Phoneme::Phoneme(const int k_gauss, const char phone_filename[],
-                 const int mfcc_dimension) {
+                 const int mfcc_dimension)
+{
   k_gauss_ = k_gauss;
 
   FILE* phone_file_ptr;
@@ -27,7 +29,8 @@ Phoneme::Phoneme(const int k_gauss, const char phone_filename[],
   my_gmm_ = new GMM(k_gauss, mfcc_dimension, weight_vec);
 }
 
-void Phoneme::RemoveTrailingLineFeed(char line[]) const {
+void Phoneme::RemoveTrailingLineFeed(char line[]) const
+{
   for (int i = 0; i < strlen(line); ++i) {
     if (line[i] == '\n') {
       line[i] = 0;

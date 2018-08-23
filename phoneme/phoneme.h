@@ -14,9 +14,11 @@
 
 using namespace std;
 
-class Phoneme {
+class Phoneme
+{
 private:
-  class GMM {
+  class GMM
+  {
   private:
     int k_;
     int mfcc_dimension_;
@@ -26,7 +28,8 @@ private:
     /**
        Default constructor.
      */
-    GMM() {
+    GMM()
+    {
       k_ = 0;
       mfcc_dimension_ = 0;
       weight_vec_.clear();
@@ -38,7 +41,8 @@ private:
        @param mfcc_dimension dimension of MFCC
      */
     GMM(const int k, const int mfcc_dimension,
-        const vector<double>& weight_vec) {
+        const vector<double>& weight_vec)
+    {
       k_ = k;
       mfcc_dimension_ = mfcc_dimension;
       weight_vec_ = weight_vec;
