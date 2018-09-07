@@ -36,9 +36,9 @@ private:
     }
 
     /**
-       Constructor with parameter.
-       @param k vsnvs
-       @param mfcc_dimension dimension of MFCC
+     * Constructor with parameter.
+     * @param k vsnvs
+     * @param mfcc_dimension dimension of MFCC
      */
     GMM(const int k, const int mfcc_dimension,
         const vector<double>& weight_vec)
@@ -54,27 +54,36 @@ private:
   GMM* my_gmm_;
 
 public:
+  /**
+   * Default constructor.
+   */
   Phoneme();
-  Phoneme(const int k_gauss, const char phone_file_name[],
-          const int mfcc_dimension_);
+  /**
+   * Constructor with parameter.
+   * @param k_gauss k of Gaussian distribution
+   * @param phoneme_filename filename of the phonemes
+   * @param mfcc_dimension dimension of MFCC
+   */
+  Phoneme(const int k_gauss, const char phoneme_filename[],
+          const int mfcc_dimension);
 
 private:
   /**
-     Private helper method to remove the trailing line feed of the given line.
-     @param line line to remove trailing line feed
+   * Private helper method to remove the trailing line feed of the given line.
+   * @param line line to remove trailing line feed
    */
   void RemoveTrailingLineFeed(char line[]) const;
   /**
-     Private helper method to parse the given line to a vector of numbers.
-     @param line line to parse
-     @param nums parsed number containers
+   * Private helper method to parse the given line to a vector of numbers.
+   * @param line line to parse
+   * @param nums parsed number containers
    */
   void ParseLine(const char line[], vector<double>& nums) const;
 
 public:
   /**
-     Accessor of my_phoneme.
-     @return phoneme
+   * Accessor of my_phoneme.
+   * @return phoneme
    */
   string GetPhoneme() const;
 };

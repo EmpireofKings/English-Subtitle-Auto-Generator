@@ -39,7 +39,8 @@ void Phoneme::RemoveTrailingLineFeed(char line[]) const
   }
 }
 
-void Phoneme::ParseLine(const char line[], vector<double>& nums) const {
+void Phoneme::ParseLine(const char line[], vector<double>& nums) const
+{
   string s = ""; // String used to contain one number
   int num_idx = 0;
   for (int i = 0; i < strlen(line); ++i) {
@@ -59,6 +60,7 @@ void Phoneme::ParseLine(const char line[], vector<double>& nums) const {
   nums[num_idx] = atof(s.c_str());
 }
 
-string Phoneme::GetPhoneme() const {
+string Phoneme::GetPhoneme() const
+{
   return my_phoneme_;
 }
